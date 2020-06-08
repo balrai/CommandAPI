@@ -19,3 +19,16 @@
 \$ dotnet add package Microsoft.EntityFrameworkCore
 \$ dotnet add package Microsoft.EntityFrameworkCore.Design
 \$ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+
+//create user for database
+\$ create user cmddbuser with encrypted password 'pa55w0rd!' createdb;
+
+//create migration
+\$ dotnet ef migrations add AddCommandsToDB
+
+//run migration
+\$ dotnet ef database update
+
+//create secret.json
+$ dotnet user-secrets set “UserID” “cmddbuser”
+$ dotnet user-secrets set “Password” “pa55w0rd!”
