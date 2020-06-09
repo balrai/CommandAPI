@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using CommandAPI.Models;
 using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CommandAPI.Controllers
 {
@@ -21,6 +22,7 @@ namespace CommandAPI.Controllers
         }
 
         // Get:  api/commands/{Id}
+        [Authorize]
         [HttpGet("{id}")]
         public ActionResult<Command> GetCommandItem(int id)
         {
