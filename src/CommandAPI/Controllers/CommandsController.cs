@@ -62,6 +62,7 @@ namespace CommandAPI.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<Command> DeleteCommandItem(int id)
         {
